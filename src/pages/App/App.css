@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: nav section;
 }
 
 .App-logo {

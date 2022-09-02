@@ -1,0 +1,19 @@
+.class-card {
+    width: 15rem;
+    height: 10rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    background-image: url("https://media.istockphoto.com/photos/overhead-view-of-light-brown-wooden-table-picture-id491606503?k=20&m=491606503&s=170667a&w=0&h=mX-sk9c89kVG5QWAjdVhe2Mqe5rCxZwENR9g4EvIpIM=");
+    -moz-box-shadow: 0 0 3px black;
+    -webkit-box-shadow: 0 0 3px black;
+    box-shadow: 0 0 10px black;
+}
+
+.class-card > * {
+    width: 75%;
+    border-radius: .3rem;
+    white-space: nowrap;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}

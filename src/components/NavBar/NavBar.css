@@ -1,0 +1,35 @@
+nav {
+    background-color: darkseagreen;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 10.5rem;
+    text-align: center;
+}
+
+nav > * {
+    padding: .5rem 1rem;
+    width: 75%;
+    background-color: rgb(196, 223, 196);
+    border-radius: .3rem;
+    margin-top: 1rem;
+    white-space: nowrap;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+nav > *:hover {
+    background-color: antiquewhite;
+}
+
+.logout {
+    position: absolute;
+    bottom: 10px;
+    width: 8rem;
+}
+
+.logout:hover {
+    background: rgb(245, 116, 46);
+}

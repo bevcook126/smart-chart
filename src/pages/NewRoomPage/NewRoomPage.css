@@ -1,0 +1,30 @@
+.room {
+    border: solid darkseagreen 3px;
+    border-radius: .3vmin;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-flow: row;
+    height: 75vmin;
+    width: 75vmin;
+    margin: auto;
+    padding: 1vmin;
+    background-color: rgba(0,0,0,.5);}
+
+.desk {
+    border: solid white 1px;
+    margin: .2vmin;
+    border-radius: .3vmin;
+}
+
+.desk:hover {
+    background-color: darkseagreen;
+}
+
+.new-room-page {
+    display: flex;
+}
+
+.class-list {
+    margin: auto;
+    border: white solid;
+}
