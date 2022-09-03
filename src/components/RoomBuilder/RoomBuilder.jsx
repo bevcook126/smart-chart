@@ -1,3 +1,5 @@
+import './RoomBuilder.css';
+
 export default function RoomBuilder() {
     return  (
     <div className="room">
