@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './NewRoomPage.css'
 import RosterCard from '../../components/RosterCard/RosterCard';
+import RoomBuilder from '../../components/RoomBuilder/RoomBuilder';
 
 
 export default function NewRoomPage() {
@@ -12,108 +13,7 @@ export default function NewRoomPage() {
     <section>
       <h1>NewRoomPage</h1>
       <div className="new-room-page">
-        <div className="room">
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-          <div className="desk"></div>
-        </div>
+       <RoomBuilder />
         <div className="class-list">
           Class List<br />
           <select>
