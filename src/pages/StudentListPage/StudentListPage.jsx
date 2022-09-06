@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NewStudentForm from "../../components/NewStudentForm/NewStudentForm";
 import StudentInfo from "../../components/StudentInfo/StudentInfo";
+import './StudentListPage.css';
 
 export default function StudentListPage({ students }) {
     const [student, setStudents] = useState([{ 
@@ -17,17 +18,16 @@ export default function StudentListPage({ students }) {
     return (
         <div>
         <h1>StudentListPage</h1>
-        <NewStudentForm />
+        <NewStudentForm addStudent={addStudent}/>
         <h1>All Students</h1>
         <table>
             <tr>
                 <th>Name</th>
-                <th>Image</th>
-                <th>Notes</th>
+                <th className="info-img">Image</th>
+                <th>Class</th>
+                <th className="info-notes">Notes</th>
             </tr>
-            <tr>
-            <StudentInfo />
-            </tr>
+            <StudentInfo student={student}/>
         </table>
         </div>
     )

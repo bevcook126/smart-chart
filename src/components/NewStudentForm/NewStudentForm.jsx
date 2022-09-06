@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./NewStudentForm.css";
 
-export default function NewStudentForm() {
+export default function NewStudentForm( {addStudent} ) {
  
   return (
     <>
