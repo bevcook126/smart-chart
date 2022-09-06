@@ -1,0 +1,29 @@
+.NewStudentForm {
+    display: grid;
+    grid-template-columns: 3rem auto;
+    gap: 1rem;
+    align-items: center;
+    border: .2rem white;
+    margin: 1rem;
+}
+
+.NewStudentForm > input, .NewStudentForm > select, .NewStudentForm > button {
+    height: 2rem;
+}
+
+.NewStudentForm > * {
+    font-size: 1rem;
+}
+
+.NewStudentForm > label {
+    margin-right: 0;
+    color: white;
+    font-weight: bolder;
+}
+
+.NewStudentForm > button {
+    width: 10rem;
+    margin: auto;
+    background-color: darkseagreen;
+}
+
