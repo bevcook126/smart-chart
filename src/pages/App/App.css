@@ -13,6 +13,10 @@
   margin: 2vmin;
 }
 
+.right > * {
+  margin-bottom: 2vmin;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

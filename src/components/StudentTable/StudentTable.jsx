@@ -7,12 +7,14 @@ export default function StudentTable({ students }) {
     ));
     return (
         <table>
-            <tr>
-                <th>Name</th>
-                <th className="info-img">Image</th>
-                <th className="info-notes">Notes</th>
-            </tr>
-        {studentTableInfo}
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th className="info-img">Image</th>
+                    <th className="info-notes">Notes</th>
+                </tr>
+                {studentTableInfo}
+            </tbody>
         </table>
     )
 }

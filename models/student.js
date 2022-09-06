@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const studentSchema = new Schema({
   name: { type: String, required: true },
   img: {type: String, required: true },
-  notes: {type: Text},
+  notes: {type: String},
 }, {
   timestamps: true
 });

@@ -26,7 +26,7 @@ export default function NewStudentForm( {addStudent} ) {
   return (
     <>
     <h3>Add New Student</h3>
-    <form onSubmit="handleAddStudent" className="NewStudentForm">
+    <form onSubmit={handleAddStudent} className="NewStudentForm">
         <label>Name:</label>
         <input
             name="name"
