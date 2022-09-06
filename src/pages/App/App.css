@@ -1,9 +1,16 @@
 .App {
   text-align: center;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 7fr;
-  grid-template-areas: nav section;
+}
+
+.home-page {
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+.left, .right {
+  margin: 2vmin;
 }
 
 .App-logo {

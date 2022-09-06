@@ -4,7 +4,7 @@
     gap: 1rem;
     align-items: center;
     margin: auto;
-    width: 30rem;
+    width: 50vmin;
 }
 
 .NewStudentForm > input, .NewStudentForm > select {

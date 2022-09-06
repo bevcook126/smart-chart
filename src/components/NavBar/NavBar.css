@@ -1,10 +1,8 @@
 nav {
     background-color: darkseagreen;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 10.5rem;
+    width: 100%;
     text-align: center;
+    height: 3rem;
 }
 
 nav > * {
@@ -22,12 +20,6 @@ nav > * {
 
 nav > *:hover {
     background-color: antiquewhite;
-}
-
-.logout {
-    position: absolute;
-    bottom: 10px;
-    width: 8rem;
 }
 
 .logout:hover {

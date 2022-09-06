@@ -1,0 +1,18 @@
+table, th, td {
+    border: solid white;
+    background-color: darkseagreen;
+    padding: .5vmin 1vmin;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.info-img {
+    width: 1vmin;
+}
+
+.info-notes {
+    width: 25vmin;
+}
