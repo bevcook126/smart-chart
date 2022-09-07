@@ -14,7 +14,6 @@ export default function App() {
   // const [classroom, setClassroom] = useState([]);
   const [students, setStudents] = useState([]);
   const [selectStudent, setSelectStudent] = useState(null);
-console.log(students);
 async function addStudent(student) {
     const newStudents = await studentsAPI.addStudent(student);
     setStudents([...students, newStudents]);

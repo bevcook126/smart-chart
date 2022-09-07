@@ -6,16 +6,22 @@ import './RoomBuilder.css';
 
 
 export const RoomBuilder = ({student, setSelectStudent }) => {
-    const [desk, setDesk] = useState(null) 
+    const [desk, setDesk] = useState({
+        img: ""
+      }) 
 
-    function handleSubmit() {
-        console.log('test')
-        
-    }
+    const handleSubmit = evt => {
+        console.log('test', {student})
+        setDesk(evt.target.value);
+        evt.preventDefault();
+    };
+
     return  (
     <div className="room">
 
-        <input type="submit" onClick={handleSubmit} value="1" className="desk"></input>
+        <div onClick={handleSubmit} className="desk" 
+        // style={{backgroundImage: `url(${desk.img})`}}
+        ></div>
 
         
     </div>

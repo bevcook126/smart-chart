@@ -10,7 +10,6 @@ module.exports = {
 async function create(req, res) {
     req.body.user = req.user_id;
     const student = await Student.create(req.body);
-    console.log(student, "student controller")
     res.json(student);
 }
 
