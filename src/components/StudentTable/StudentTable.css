@@ -1,23 +1,6 @@
-table, th, td {
-    border: solid white;
-    background-color: darkseagreen;
-    padding: .5vmin 1vmin;
-}
-
-table {
+.student-table {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
     margin: auto;
-    border-collapse: collapse;
-    font-size: 1.7vmin;
-}
-
-.info-img {
-    width: 1vmin;
-}
-
-.info-notes {
-    width: 50vmin;
-}
-
-th, tbody > td {
-    height: 15px;
+    justify-content: center;
 }

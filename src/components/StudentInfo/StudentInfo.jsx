@@ -1,13 +1,19 @@
-import './StudentInfo.css'
 
-export default function StudentInfo({ student }) {
+import { useDrag, useDrop } from "react-dnd";
+import './StudentInfo.css';
+
+export default function StudentInfo({ student, id }) {
+    const [{ isDragging }, dragRef] = useDrag({
+        type: 'student',
+        item: { student },
+        collect: (monitor) => ({
+            isDragging: monitor.isDragging()
+        })
+    })
     return (
-
-        <tr>
-            <td className="student-name">{student.name}</td>
-            <td className="img-td"><img className="student-img" src={student.img} /></td>
-            <td className="student-notes">{student.notes}</td>
-        </tr>
-
+            <div className="student-card" ref={dragRef} style={{backgroundImage: `url(${student.img})`}}>
+                {student.name}
+                {isDragging && '😱'}
+            </div>
     )
 }

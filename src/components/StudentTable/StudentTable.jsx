@@ -6,15 +6,8 @@ export default function StudentTable({ students }) {
         <StudentInfo student={s} key={name} />
     ));
     return (
-        <table>
-            <tbody>
-                <tr>
-                    <th>Name</th>
-                    <th className="info-img">📸</th>
-                    <th className="info-notes">Notes</th>
-                </tr>
-                {studentTableInfo}
-            </tbody>
-        </table>
+        <div className="student-table">
+            {studentTableInfo}
+        </div>
     )
 }

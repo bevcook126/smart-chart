@@ -1,46 +1,31 @@
-table, th, td {
-    border: solid white;
-    background-color: darkseagreen;
-    padding: .5vmin 1vmin;
-}
 
-table {
-    margin: auto;
-    border-collapse: collapse;
-    height: 90vmin;
-}
-
-.info-img {
-    width: .4vmin;
-    height: .4vmin;
-}
-
-.info-notes {
-    width: 25vmin;
-}
-
-.student-img {
+.student-card {
     /* height: 22px;
     width: 22px; */
-    display: block;
-    height: 3vmin;
-    width: 3vmin;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 7vmin;
+    width: 7vmin;
     object-fit: cover;
-    /* border-radius: .5vmin; */
+    border-radius: .5vmin;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     overflow: hidden;
-    margin: auto;
+    margin: 1vmin;
+    text-shadow: 1px 1px 2px black, 0 0 25px #2666cf, 0 0 5px darkblue;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.3vmin;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(1px 2px 8px #000000);
+
 }
 
-.img-td {
-    padding: 0;
-    margin: 0;
-    border-spacing: 0;
+.student-card:hover {
+    font-size: 0;
+    cursor: pointer;
+    box-shadow: none;
 }
 
-.student-name, .student-notes {
-    white-space: nowrap;
-}
-
-td:hover {
-    background-color: antiquewhite;
-}

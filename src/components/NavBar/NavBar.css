@@ -3,25 +3,28 @@ nav {
     width: 100%;
     text-align: center;
     height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-nav > * {
+.logout {
     padding: .5rem 1rem;
     width: 75%;
     background-color: rgb(196, 223, 196);
     border-radius: .3rem;
-    margin-top: 1rem;
     white-space: nowrap;
     margin-left: 1rem;
     margin-right: 1rem;
     text-decoration: none;
     color: black;
-}
-
-nav > *:hover {
-    background-color: antiquewhite;
+    width: 7rem;
 }
 
 .logout:hover {
     background: rgb(245, 116, 46);
+}
+
+.logo {
+    height: 3rem;
 }

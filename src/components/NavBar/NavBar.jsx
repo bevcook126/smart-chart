@@ -11,9 +11,8 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <br />
+      <img className="logo" src="https://i.imgur.com/ccVHh4U.png" />
       Welcome, {user.name}!&nbsp;&nbsp;
-      <b>SMART CHART</b>
       <Link className="logout" to='' onClick={handleLogOut}>Log Out</Link>
     </nav>
   );

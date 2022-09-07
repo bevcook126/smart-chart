@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewStudentForm from '../../components/NewStudentForm/NewStudentForm';
@@ -34,11 +36,15 @@ useEffect(function() {
           <NavBar user={user} setUser={setUser} />
           <div className="home-page">
             <div className="left">
-              <RoomBuilder />
-              <NewStudentForm addStudent={addStudent} />
+            <DndProvider backend={HTML5Backend}>
+              <RoomBuilder students={students} />
+            </DndProvider>
             </div>
             <div className="right">
-              <StudentTable students={students} />
+              <NewStudentForm addStudent={addStudent} />
+              <DndProvider backend={HTML5Backend}>
+                <StudentTable students={students} />
+              </DndProvider>
             </div>
           </div>
         </>
