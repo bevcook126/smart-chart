@@ -25,14 +25,13 @@ export default function NewStudentForm( {addStudent} ) {
 
   return (
     <>
-    <h3>Add New Student</h3>
     <form onSubmit={handleAddStudent} className="NewStudentForm">
         <label>Name:</label>
         <input
             name="name"
             value={newStudent.name}
             type="text"
-            placeholder="First name Last name"
+            placeholder="New Student's Name"
             onChange={handleChange}
         />
         <label>Image:</label>

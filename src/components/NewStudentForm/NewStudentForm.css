@@ -5,15 +5,10 @@
     align-items: center;
     margin: auto;
     width: 50vmin;
+    height: 20%;
+    margin-bottom: 1vmin;
 }
 
-.NewStudentForm > input, .NewStudentForm > select {
-    height: 2rem;
-}
-
-.NewStudentForm > * {
-    font-size: 1rem;
-}
 
 .NewStudentForm > label {
     margin-right: 0;

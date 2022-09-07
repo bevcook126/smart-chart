@@ -4,7 +4,8 @@
 }
 
 .home-page {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   margin: auto;
   align-items: center;
 }
@@ -13,7 +14,7 @@
   margin: 2vmin;
 }
 
-.right > * {
+.left > * {
   margin-bottom: 2vmin;
 }
 

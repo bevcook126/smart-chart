@@ -7,10 +7,12 @@ table, th, td {
 table {
     margin: auto;
     border-collapse: collapse;
+    height: 90vmin;
 }
 
 .info-img {
-    width: 1vmin;
+    width: .4vmin;
+    height: .4vmin;
 }
 
 .info-notes {
@@ -18,8 +20,27 @@ table {
 }
 
 .student-img {
-    height: 5vmin;
-    width: 5vmin;
+    /* height: 22px;
+    width: 22px; */
+    display: block;
+    height: 3vmin;
+    width: 3vmin;
     object-fit: cover;
-    border-radius: .5vmin;
+    /* border-radius: .5vmin; */
+    overflow: hidden;
+    margin: auto;
+}
+
+.img-td {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+}
+
+.student-name, .student-notes {
+    white-space: nowrap;
+}
+
+td:hover {
+    background-color: antiquewhite;
 }

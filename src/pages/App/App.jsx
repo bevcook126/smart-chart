@@ -35,9 +35,9 @@ useEffect(function() {
           <div className="home-page">
             <div className="left">
               <RoomBuilder />
+              <NewStudentForm addStudent={addStudent} />
             </div>
             <div className="right">
-              <NewStudentForm addStudent={addStudent} />
               <StudentTable students={students} />
             </div>
           </div>

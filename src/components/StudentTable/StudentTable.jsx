@@ -10,7 +10,7 @@ export default function StudentTable({ students }) {
             <tbody>
                 <tr>
                     <th>Name</th>
-                    <th className="info-img">Image</th>
+                    <th className="info-img">📸</th>
                     <th className="info-notes">Notes</th>
                 </tr>
                 {studentTableInfo}
