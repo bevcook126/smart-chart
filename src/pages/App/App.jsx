@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewStudentForm from '../../components/NewStudentForm/NewStudentForm';
@@ -15,6 +13,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   // const [classroom, setClassroom] = useState([]);
   const [students, setStudents] = useState([]);
+  const [selectStudent, setSelectStudent] = useState(null);
 console.log(students);
 async function addStudent(student) {
     const newStudents = await studentsAPI.addStudent(student);
@@ -36,15 +35,11 @@ useEffect(function() {
           <NavBar user={user} setUser={setUser} />
           <div className="home-page">
             <div className="left">
-            <DndProvider backend={HTML5Backend}>
-              <RoomBuilder students={students} />
-            </DndProvider>
+              <RoomBuilder student={selectStudent} setSelectStudent={setSelectStudent} />
             </div>
             <div className="right">
               <NewStudentForm addStudent={addStudent} />
-              <DndProvider backend={HTML5Backend}>
-                <StudentTable students={students} />
-              </DndProvider>
+                <StudentTable setSelectStudent={setSelectStudent} students={students} />
             </div>
           </div>
         </>

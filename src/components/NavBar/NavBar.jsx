@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <img className="logo" src="https://i.imgur.com/ccVHh4U.png" />
+      <img className="logo" src="https://i.imgur.com/q3sCq8Q.png" />
       Welcome, {user.name}!&nbsp;&nbsp;
       <Link className="logout" to='' onClick={handleLogOut}>Log Out</Link>
     </nav>

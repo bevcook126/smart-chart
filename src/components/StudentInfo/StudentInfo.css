@@ -24,7 +24,7 @@
 }
 
 .student-card:hover {
-    font-size: 0;
+    /* font-size: 0; */
     cursor: pointer;
     box-shadow: none;
 }

@@ -1,26 +1,25 @@
 import React, { useState } from 'react'
-import { useDrag, useDrop } from 'react-dnd';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import  StudentInfo  from '../StudentInfo/StudentInfo';
+import { Responsive, WidthProvider } from "react-grid-layout";
 import './RoomBuilder.css';
 
-export default function RoomBuilder({students}) {
-    const [room, setRoom] = useState([]);
-    const [{ isOver }, dropRef] = useDrop({
-        accept: 'student',
-        drop: (item) => setRoom((room) =>
-            !room.includes(item) ? [...room, item] : room),
-        collect: (monitor) => ({
-            isOver: monitor.isOver()
-        })
-    })
 
+export const RoomBuilder = ({student, setSelectStudent }) => {
+    const [desk, setDesk] = useState(null) 
+
+    function handleSubmit() {
+        console.log('test')
+        
+    }
     return  (
-    <div className="room" ref={dropRef}>
-        <div className="desk">
-        {room.map(student => <StudentInfo id={student.id} name={student.name} />)}
-                {isOver && '.'}
-        </div>
+    <div className="room">
+
+        <input type="submit" onClick={handleSubmit} value="1" className="desk"></input>
+
         
     </div>
     )
 }
+
+export default RoomBuilder;

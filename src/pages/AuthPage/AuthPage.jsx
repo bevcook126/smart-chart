@@ -7,7 +7,7 @@ export default function AuthPage({ setUser }) {
   
   return (
     <main>
-      <h1>AuthPage</h1>
+      <img src="https://i.imgur.com/trsLEiQ.png"></img>
       <button onClick={() => setShowLogin(!showLogin)}>
         {showLogin ? 'Sign Up' : 'Log In'}
       </button>
