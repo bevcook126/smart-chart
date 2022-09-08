@@ -1,0 +1,8 @@
+form {
+    width: 60vh;
+}
+
+button, form > button {
+    background-color: darkseagreen;
+    width: 60vh;
+}

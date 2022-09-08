@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Droppable, Draggable } from "react-beautiful-dnd"
 import './StudentInfo.css'
 
 
 
 export const StudentInfo = ({ student, id, setSelectStudent }) => {
-   
+    const [selected, setSelected] = useState(0);
     const [isActive, setIsActive] = useState(false);
     const handleClick = () => {
         setIsActive(current => !current);
@@ -14,8 +13,8 @@ export const StudentInfo = ({ student, id, setSelectStudent }) => {
 
     return (
         
-            <div key={student.name} onClick={handleClick} className="student-card" 
-                style= {{  
+            <div key={student.name} onClick={handleClick} className="student-card"
+                style= {{
                     backgroundImage: `url(${student.img})`,
                     border: isActive ? 'solid rgb(245, 116, 46)' : 'solid black',
                     boxShadow: isActive ? 'none' : 'inset 0 0 0 1000px rgba(0, 0, 0, 0.2)',

@@ -1,0 +1,16 @@
+.auth-img {
+    width: 50%
+}
+
+.auth-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20vh auto;
+    font-family: 'Coda', cursive;
+}
+
+button {
+    font-family: 'Coda', cursive;
+    font-weight: 100;
+}

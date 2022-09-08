@@ -14,6 +14,7 @@
     border: solid white 1px;
     margin: .2vmin;
     border-radius: .3vmin;
+    background-size: cover;
 }
 
 .desk:hover {
