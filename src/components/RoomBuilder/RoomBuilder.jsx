@@ -7,14 +7,15 @@ import './RoomBuilder.css';
 
 export const RoomBuilder = ({student, setSelectStudent }) => {
     const [desk, setDesk] = useState({
-        name: "",
-        img: "",
-        notes: ""
+        // name: "",
+        // img: "",
+        // notes: ""
       }) 
 
     const handleSubmit = evt => {
         console.log('test', {student})
-        setDesk({student});
+        setDesk('help');
+        // ^ SET DESK IS NOT WORKING!!!!
         console.log({desk})
         evt.preventDefault();
     };
