@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const classroomSchema = require('./classroomSchema');
-const studentSchema = require('./studentSchema');
+const studentSchema = require('./student');
 
 const deskSchema = new Schema({
-  img: {type: String},
+  student: studentSchema,
 }, {
   timestamps: true
 });
