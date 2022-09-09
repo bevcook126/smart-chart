@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const studentSchema = require('./student');
 
 const deskSchema = new Schema({
-  student: studentSchema,
+  student: studentSchema
 }, {
   timestamps: true
 });

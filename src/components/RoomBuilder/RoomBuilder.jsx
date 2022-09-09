@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import  StudentInfo  from '../StudentInfo/StudentInfo';
 import { Responsive, WidthProvider } from "react-grid-layout";
 import * as studentsAPI from "../../utilities/students-api";
 import * as desksAPI from "../../utilities/desks-api";
+import * as roomsAPI from "../../utilities/rooms-api";
 import './RoomBuilder.css';
 
 
-export const RoomBuilder = ({student, setSelectStudent }) => {
+export const RoomBuilder = ({
+    student, 
+    setSelectStudent, 
+    user, 
+    userRooms, 
+    setUserRooms 
+}) => {
     const [room, setRoom] = useState([
         null, null, null, null, null, null, null, null, null, null,
         null, null, null, null, null, null, null, null, null, null,
@@ -20,17 +27,49 @@ export const RoomBuilder = ({student, setSelectStudent }) => {
         null, null, null, null, null, null, null, null, null, null,
         null, null, null, null, null, null, null, null, null, null
     ])
-    const [desk, setDesk] = useState(null) 
-    // const [userDesks, setUserDesks] = useState([])
-    const [selectedDesk, setSelectedDesk] = useState(null)
-    const [updatedDesk, setUpdatedDesk] = useState(null)
+    // const [desk, setDesk] = useState(null) 
+    // // const [userDesks, setUserDesks] = useState([])
+    // const [selectedDesk, setSelectedDesk] = useState(null)
+    // const [updatedDesk, setUpdatedDesk] = useState(null)
+    // const [updatedRoom, setUpdatedRoom] = useState(null)
 
-    async function updateDesk(editData) {
-        const deskToUpdate = await desksAPI.updateDesk(editData)
-        const updatedDesk = (d => d._id === deskToUpdate._id ? deskToUpdate : d)
-        setUpdatedDesk(updatedDesk)
-      }
+    // async function updateDesk(editData) {
+    // const deskToUpdate = await desksAPI.updateDesk(editData)
+    // const updatedDesk = (d => d._id === deskToUpdate._id ? deskToUpdate : d)
+    //     setUpdatedDesk(updatedDesk)
+    // }
 
+    async function updateRoom(editData) {
+        const roomUpdate = await roomsAPI.updateRoom(editData)
+        // const updatedRoom = (r => r._id === roomUpdate._id ? roomUpdate : r)
+        // setUpdatedRoom(updatedRoom)
+    }
+
+    useEffect(function () {
+        // if (!user) {
+        //     console.log(user)
+        //     return
+        // }
+        async function getRooms() {
+            const rooms = await roomsAPI.getAll();
+            console.log('rooms.layout', rooms)
+            setRoom(rooms.layout)
+        }
+        getRooms()
+    }, [])
+
+
+    const handleSubmit = (deskId, updatedRoom) => {
+        console.log('test', {student})
+        // setDesk({student});
+        // setUpdatedDesk(student);
+        const tempRoom = room.map(x=>x)
+        tempRoom[deskId] = student;
+        setRoom(tempRoom);
+        // console.log({desk})
+        console.log(room);
+        // setUserRooms(room);
+    }
 
     const unassocStudent = (deskId) => {
         const tempRoom = room.map(x=>x)
@@ -38,15 +77,16 @@ export const RoomBuilder = ({student, setSelectStudent }) => {
         setRoom(tempRoom)
     }
 
-    const handleSubmit = (deskId) => {
-        console.log('test', {student})
-        setDesk({student});
-        setUpdatedDesk(student);
-        const tempRoom = room.map(x=>x)
-        tempRoom[deskId] = student;
-        setRoom(tempRoom);
-        console.log({desk})
-    };
+
+
+
+        
+    function handleSave() {
+        updateRoom(room);          
+    }
+
+
+
 
 
     // function handleSelectStudent(student) {
@@ -69,13 +109,16 @@ export const RoomBuilder = ({student, setSelectStudent }) => {
 //     onClick={() => unassocStudent(idx)} key={idx} className="desk" style={{backgroundImage: 'none' }}}}}
 
 return  (
+    <>
     <div className="room">
         {room.map((desk, idx) => (
             <div onClick=
-            {desk == null ? () => handleSubmit(idx) : () => unassocStudent(idx)} key={idx} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}
+            {desk == null && desk !== student ? () => handleSubmit(idx) : () => unassocStudent(idx)} key={idx} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}
         ></div>
         ))}
     </div>
+    <button onClick={handleSave}>SAVE ROOM</button>
+    </>
     )
 }
 

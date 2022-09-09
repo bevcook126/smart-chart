@@ -11,6 +11,7 @@ import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+
   // const [classroom, setClassroom] = useState([]);
   const [students, setStudents] = useState([]);
   const [selectStudent, setSelectStudent] = useState(null);
@@ -25,8 +26,12 @@ useEffect(function() {
     const allStudents = await studentsAPI.getAll();
     setStudents(allStudents)
   }
-  getStudents()
-}, []);
+  if (user) {
+    getStudents();
+  } else {
+    setStudents([]);
+  }
+}, [user]);
 
   return (
     <main className="App">
@@ -35,7 +40,7 @@ useEffect(function() {
           <NavBar user={user} setUser={setUser} />
           <div className="home-page">
             <div className="left">
-              <RoomBuilder student={selectStudent} setSelectStudent={setSelectStudent} desk={selectDesk} setSelectDesk={setSelectDesk} />
+              <RoomBuilder user={user} student={selectStudent} setSelectStudent={setSelectStudent} desk={selectDesk} setSelectDesk={setSelectDesk} />
             </div>
             <div className="right">
               <NewStudentForm addStudent={addStudent} />

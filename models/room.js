@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const deskSchema = require('./desk');
+// const deskSchema = require('./desk');
 
 const roomSchema = new Schema({
   // desk : deskSchema,
-  layout: { type: Array, required: true },
+  user: {type:Schema.Types.ObjectId, ref: 'User'},
+  layout: { type: Array, required: true }
 }, {
   timestamps: true
 });
