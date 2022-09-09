@@ -32,9 +32,11 @@ export const RoomBuilder = ({student, setSelectStudent }) => {
       }
 
 
-    // const handleClick = () => {
-    //     setSelectedDesk(room[{desk}]);
-    // }
+    const unassocStudent = (deskId) => {
+        const tempRoom = room.map(x=>x)
+        tempRoom[deskId] = null;
+        setRoom(tempRoom);
+    }
 
     const handleSubmit = (deskId) => {
         console.log('test', {student})
@@ -43,9 +45,7 @@ export const RoomBuilder = ({student, setSelectStudent }) => {
         const tempRoom = room.map(x=>x)
         tempRoom[deskId] = student;
         setRoom(tempRoom);
-        // handleClick();
         console.log({desk})
-        // evt.preventDefault();
     };
 
 
@@ -53,113 +53,28 @@ export const RoomBuilder = ({student, setSelectStudent }) => {
     //     setSelectStudent(student);
     // }
 
-    
+    // useEffect to call backend and see if user already has a list.
+    // if they have a list, use setRoom to update room 
+
+    // div desk.student ==! null ? {()=> handleSubmit, background} : {() => unassoc, background none} 
+
 // room.map, foreach object in room array, render a div. handleSubmit
+
+
+
+// {if (desk == null) return {
+        
+//     onClick={() => handleSubmit(idx)} key={idx} className="desk" style={{backgroundImage: `url(${desk.student.img})` }}
+//     else {
+//     onClick={() => unassocStudent(idx)} key={idx} className="desk" style={{backgroundImage: 'none' }}}}}
+
 return  (
     <div className="room">
         {room.map((desk, idx) => (
-            <div onClick={() => handleSubmit(idx)} key={idx} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}></div>
+            <div onClick=
+            {desk == null ? () => handleSubmit(idx) : () => unassocStudent(idx)} key={idx} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}
+        ></div>
         ))}
-        {/* <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div>
-        <div onClick={handleSubmit} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.student.img})` : 'none' }}></div> */}
     </div>
     )
 }

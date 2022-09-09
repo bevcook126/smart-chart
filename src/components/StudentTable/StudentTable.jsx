@@ -6,8 +6,11 @@ export default function StudentTable({ students, setSelectStudent }) {
         <StudentInfo student={s} key={name} setSelectStudent={setSelectStudent}/>
     ));
     return (
+        <>
         <div className="student-table">
             {studentTableInfo}
         </div>
+        <p>BENDER RODRIGUEZ'S STUDENT DETAILS</p>
+        </>
     )
 }
