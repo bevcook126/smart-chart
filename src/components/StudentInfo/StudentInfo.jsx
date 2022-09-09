@@ -3,17 +3,27 @@ import './StudentInfo.css'
 
 
 
-export const StudentInfo = ({ student, id, setSelectStudent }) => {
-    const [selected, setSelected] = useState(0);
+export const StudentInfo = ({ student, students, name, idx, setSelectStudent }) => {
+    // const [selected, setSelected] = useState(0);
     const [isActive, setIsActive] = useState(false);
+    const [inactive, setInactive] = useState(true);
     const handleClick = () => {
         setIsActive(current => !current);
+        setInactive(current => !current);
         setSelectStudent({student});
+        console.log('students', students);
+        console.log('student',student);
     };
 
+    // <div className="room">
+    //     {room.map((desk, idx) => (
+    //         <div onClick=
+    //         {desk == null ? () => handleSubmit(idx) : () => unassocStudent(idx)} key={idx} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}
+    //     ></div>
+
     return (
-        
-            <div key={student.name} onClick={handleClick} className="student-card"
+        <>
+            <div key={student.name} idx={idx} onClick={handleClick} className="student-card"
                 style= {{
                     backgroundImage: `url(${student.img})`,
                     border: isActive ? 'solid rgb(245, 116, 46)' : 'solid black',
@@ -23,6 +33,7 @@ export const StudentInfo = ({ student, id, setSelectStudent }) => {
                 {student.name}
                 
             </div>
+        </>
     )
 }
 

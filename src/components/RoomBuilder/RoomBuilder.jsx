@@ -35,7 +35,7 @@ export const RoomBuilder = ({student, setSelectStudent }) => {
     const unassocStudent = (deskId) => {
         const tempRoom = room.map(x=>x)
         tempRoom[deskId] = null;
-        setRoom(tempRoom);
+        setRoom(tempRoom)
     }
 
     const handleSubmit = (deskId) => {

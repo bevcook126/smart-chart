@@ -11,7 +11,8 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <img className="logo" src="https://i.imgur.com/q3sCq8Q.png" />
+      <Link to="/"><img className="logo" src="https://i.imgur.com/q3sCq8Q.png" /></Link>
+      <Link className="" to='/students'>{user.name}'s Roster</Link>
       Welcome, {user.name}!&nbsp;&nbsp;
       <Link className="logout" to='' onClick={handleLogOut}>Log Out</Link>
     </nav>
