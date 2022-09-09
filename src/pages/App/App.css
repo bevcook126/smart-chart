@@ -20,6 +20,12 @@
   margin-bottom: 2vmin;
 }
 
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,11 +1,10 @@
 .NewStudentForm {
     display: grid;
     grid-template-columns: 3rem auto;
-    gap: 1rem;
+    gap: .5rem;
     align-items: center;
     margin: auto;
-    width: 50vmin;
-    height: 20%;
+    width: 40vmin;
     margin-bottom: 1vmin;
 }
 
@@ -14,6 +13,10 @@
     margin-right: 0;
     color: white;
     font-weight: bolder;
+}
+
+.NewStudentForm > input {
+    height: 3vmin;
 }
 
 .NewStudentForm > button {

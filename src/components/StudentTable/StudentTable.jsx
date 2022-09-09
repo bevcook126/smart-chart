@@ -11,6 +11,9 @@ export default function StudentTable({ students, name, setSelectStudent }) {
         <div className="student-table">
             {studentTableInfo}
         </div>
+        <div>
+            <h1>Student Info</h1>
+        </div>
         </>
     )
 }
