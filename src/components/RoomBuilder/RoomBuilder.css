@@ -1,5 +1,5 @@
 .room {
-    border: solid darkseagreen 3px;
+    border: solid white 1px;
     border-radius: .3vmin;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -15,6 +15,7 @@
     margin: .2vmin;
     border-radius: .3vmin;
     background-size: cover;
+    background-position: center;
 }
 
 .desk:hover {

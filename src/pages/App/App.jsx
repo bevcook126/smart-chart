@@ -14,6 +14,7 @@ export default function App() {
   // const [classroom, setClassroom] = useState([]);
   const [students, setStudents] = useState([]);
   const [selectStudent, setSelectStudent] = useState(null);
+  const [selectDesk, setSelectDesk] = useState(null);
 async function addStudent(student) {
     const newStudents = await studentsAPI.addStudent(student);
     setStudents([...students, newStudents]);
@@ -34,7 +35,7 @@ useEffect(function() {
           <NavBar user={user} setUser={setUser} />
           <div className="home-page">
             <div className="left">
-              <RoomBuilder student={selectStudent} setSelectStudent={setSelectStudent} />
+              <RoomBuilder student={selectStudent} setSelectStudent={setSelectStudent} desk={selectDesk} setSelectDesk={setSelectDesk} />
             </div>
             <div className="right">
               <NewStudentForm addStudent={addStudent} />
