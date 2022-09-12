@@ -1,7 +1,8 @@
 import { useState } from "react";
+import StudentInfo from "../StudentInfo/StudentInfo";
 import "./NewStudentForm.css";
 
-export default function NewStudentForm( {addStudent} ) {
+export default function NewStudentForm( {addStudent, students} ) {
     const [newStudent, setNewStudent] = useState({
         name: "",
         img: "",
@@ -26,12 +27,13 @@ export default function NewStudentForm( {addStudent} ) {
   return (
     <>
     <form onSubmit={handleAddStudent} className="NewStudentForm">
+
         <label>Name:</label>
         <input
             name="name"
             value={newStudent.name}
             type="text"
-            placeholder="New Student's Name"
+            placeholder="Student's Name"
             onChange={handleChange}
         />
         <label>Image:</label>
@@ -42,15 +44,8 @@ export default function NewStudentForm( {addStudent} ) {
             placeholder="Image URL"
             onChange={handleChange}
         />
-        <label>Notes:</label>
-        <input
-            name="notes"
-            value={newStudent.notes}
-            type="text"
-            placeholder="Notes"
-            onChange={handleChange}
-        />
-      <button type="submit">ADD STUDENT</button>
+        
+          <button type="submit">SAVE STUDENT</button>
     </form>
     </>
   );

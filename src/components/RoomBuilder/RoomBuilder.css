@@ -24,3 +24,13 @@
     filter: drop-shadow(1px 2px 8px rgb(245, 116, 46));
 
 }
+
+.room-buttons {
+    display: flex;
+    width: 75vh;
+    margin: auto;
+}
+
+.room-buttons > button:hover {
+    background-color: rgb(245, 116, 46);
+}

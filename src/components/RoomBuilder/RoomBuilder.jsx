@@ -54,6 +54,21 @@ export const RoomBuilder = ({student}) => {
         updateRoom(room);          
     }
 
+    function handleClear() {
+        setRoom([
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null
+        ])
+    }
+
 
 
 
@@ -64,11 +79,17 @@ return  (
     <div className="room">
         {room.map((desk, idx) => (
             <div onClick=
-            {desk == null && desk !== student ? () => handleSubmit(idx) : () => unassocStudent(idx)} key={idx} className="desk" style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}
+            {desk == null || desk !== student ? 
+                () => handleSubmit(idx) : () => unassocStudent(idx)} 
+            key={idx} className="desk" 
+            style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}
         ></div>
         ))}
     </div>
+    <div className="room-buttons">
+    <button onClick={handleClear}>CLEAR ROOM</button>
     <button onClick={handleSave}>SAVE ROOM</button>
+    </div>
     </>
     )
 }

@@ -4,3 +4,36 @@
     margin: auto;
     justify-content: center;
 }
+
+
+.delete > button {
+    display: flex;
+    margin: auto;
+    width: 20rem;
+}
+
+.delete > select {
+    border-radius: .3rem;
+    height: 1.4rem;
+    font-family: 'Coda', cursive;
+    width: 15rem;
+}
+
+.delete {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-select {
+    display: flex;
+    margin: 1rem auto;
+    color: white;
+    font-family: 'Coda', cursive;
+}
+
+.delete-select > select {
+    font-family: 'Coda', cursive;
+    width: 15.5rem;
+    margin-left: 1rem;
+    border-radius: .3rem;
+}

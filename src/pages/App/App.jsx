@@ -20,7 +20,7 @@ async function addStudent(student) {
     const newStudents = await studentsAPI.addStudent(student);
     setStudents([...students, newStudents]);
 }
-  
+
 useEffect(function() {
   async function getStudents() {
     const allStudents = await studentsAPI.getAll();
@@ -43,7 +43,7 @@ useEffect(function() {
               <RoomBuilder user={user} student={selectStudent} setSelectStudent={setSelectStudent} desk={selectDesk} setSelectDesk={setSelectDesk} />
             </div>
             <div className="right">
-              <NewStudentForm addStudent={addStudent} />
+              <NewStudentForm addStudent={addStudent} students={students} />
                 <StudentTable setSelectStudent={setSelectStudent} students={students} />
             </div>
           </div>

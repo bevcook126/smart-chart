@@ -7,8 +7,8 @@ export const StudentInfo = ({ student, students, idx, setSelectStudent }) => {
     const [isActive, setIsActive] = useState([]);
     // const [inactive, setInactive] = useState(true);
     const handleClick = () => {
-        // setInactive(current => !current);
         setIsActive(isActive.unshift(student));
+        // setInactive(current => !current);
         setSelectStudent({student});
         console.log('isActive', isActive[0])
         console.log('students', students);
@@ -17,7 +17,7 @@ export const StudentInfo = ({ student, students, idx, setSelectStudent }) => {
 
     return (
         <>
-            <div key={student.name} idx={idx} onClick={handleClick} className="student-card"
+            <div key={student.name} student={student} idx={idx} onClick={handleClick} className="student-card"
                 style= {{
                     backgroundImage: `url(${student.img})`,
                     border: isActive[0] ? 'solid rgb(245, 116, 46)' : 'solid black',

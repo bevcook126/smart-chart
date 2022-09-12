@@ -60,3 +60,8 @@
     transform: rotate(360deg);
   }
 }
+
+button:hover {
+  background-color: rgb(245, 116, 46);
+  border-color: rgb(245, 116, 46);
+}

@@ -13,6 +13,7 @@ export default function StudentTable({ students, name, setSelectStudent, student
         console.log('students', students);
         console.log('student',student);
     };
+    
     const studentTableInfo = students.map((s, idx) => (
         <StudentInfo student={s} key={idx} idx={idx} students={students} setSelectStudent={setSelectStudent}/>
     ));
@@ -21,8 +22,16 @@ export default function StudentTable({ students, name, setSelectStudent, student
         <div className="student-table">
             {studentTableInfo}
         </div>
-        <div>
-            {isActive ? <p>{student.notes}</p> : ''}
+        <div className="delete">
+            <div className="delete-select">
+                <label>Student: </label>
+                <select>
+                    {students.map((s, idx) => (
+                <option student={s} key={idx} idx={idx} students={students}>{s.name}</option>
+                    ))}
+                </select>
+            </div>
+            <button>DELETE STUDENT</button>
         </div>
         </>
     )

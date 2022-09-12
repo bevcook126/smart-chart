@@ -4,7 +4,7 @@ const Student = require('../../models/student');
 module.exports = {
   create,
   index,
-//   show
+  deleteStudent
 };
 
 async function create(req, res) {
@@ -18,7 +18,15 @@ async function index(req, res) {
     res.json(students);
 }
 
-// async function show(req, res) {
-//     const item = await Student.findById(req.params.id);
-//     res.json(student);
-//   }
+
+async function deleteStudent(req, res, next) {
+  try {
+    const student = await Student.findOne({'student._id': req.params.id, 'students.user': req.user._id});
+    if (!student) throw new Error('Nice Try!');
+    student.remove(req.params.id);
+    await student.save();
+    res.redirect('/');
+  } catch (err) {
+    return next(err);
+  }
+}
