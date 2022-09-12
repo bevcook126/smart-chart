@@ -2,11 +2,10 @@ import { useState } from "react";
 import StudentInfo from "../StudentInfo/StudentInfo";
 import "./NewStudentForm.css";
 
-export default function NewStudentForm( {addStudent, students} ) {
+export default function NewStudentForm( {addStudent, students, user} ) {
     const [newStudent, setNewStudent] = useState({
         name: "",
         img: "",
-        notes: "",
         });
 
         function handleAddStudent(evt) {
@@ -15,7 +14,6 @@ export default function NewStudentForm( {addStudent, students} ) {
             setNewStudent({
               name: "",
               img: "",
-              notes: ""
             });
           }
         

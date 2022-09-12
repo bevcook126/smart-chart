@@ -8,3 +8,7 @@ export function addStudent(formData) {
 export function getAll() {
     return sendRequest(`${BASE_URL}`);
 }
+
+export function deleteAStudent(id) {
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
+  }

@@ -8,8 +8,9 @@ module.exports = {
 };
 
 async function create(req, res) {
-    req.body.user = req.user_id;
+    req.body.user = req.user._id;
     const student = await Student.create(req.body);
+    console.log(student);
     res.json(student);
 }
 
@@ -19,14 +20,8 @@ async function index(req, res) {
 }
 
 
-async function deleteStudent(req, res, next) {
-  try {
-    const student = await Student.findOne({'student._id': req.params.id, 'students.user': req.user._id});
-    if (!student) throw new Error('Nice Try!');
-    student.remove(req.params.id);
-    await student.save();
-    res.redirect('/');
-  } catch (err) {
-    return next(err);
-  }
+async function deleteStudent(req, res) {
+  const studentDel = await Student.findOneAndDelete({'_id': req.params.id, 'user': req.user._id});
+  console.log(studentDel);
+    res.json(studentDel);
 }

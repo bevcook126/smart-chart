@@ -3,28 +3,33 @@ import './StudentInfo.css'
 
 
 
-export const StudentInfo = ({ student, students, idx, setSelectStudent }) => {
+export const StudentInfo = ({ student, students, idx, setSelectStudent, deleteStudent, selectStudent }) => {
     const [isActive, setIsActive] = useState([]);
     // const [inactive, setInactive] = useState(true);
+    let clickedStudent;
     const handleClick = () => {
-        setIsActive(isActive.unshift(student));
-        // setInactive(current => !current);
         setSelectStudent({student});
+        isActive.shift();
+        console.log('isActive[0] shift', isActive)
+        isActive.unshift(student);
+        console.log('isActive[0] unshift', isActive);
+        let clickedStudent = isActive.find(student);
         console.log('isActive', isActive[0])
-        console.log('students', students);
-        console.log('student', student);
     };
 
     return (
         <>
-            <div key={student.name} student={student} idx={idx} onClick={handleClick} className="student-card"
-                style= {{
+            <div key={student.name}  students={students} idx={idx} 
+            onClick={handleClick} 
+            className={isActive[0] === students._id ?  'not-selected' : 'selected' }
+            style= {{
                     backgroundImage: `url(${student.img})`,
-                    border: isActive[0] ? 'solid rgb(245, 116, 46)' : 'solid black',
-                    boxShadow: isActive[0] ? 'none' : 'inset 0 0 0 1000px rgba(0, 0, 0, 0.2)',
-                    filter: isActive[0] ? 'drop-shadow(1px 2px 8px rgb(245, 116, 46))' : 'drop-shadow(1px 2px 8px #000000)'
+                    // border: selectStudent === student ? 'solid rgb(245, 116, 46)' : 'solid black',
+                    // boxShadow: isActive[0] ? 'none' : 'inset 0 0 0 1000px rgba(0, 0, 0, 0.2)',
+                    // filter: isActive[0] ? 'drop-shadow(1px 2px 8px rgb(245, 116, 46))' : 'drop-shadow(1px 2px 8px #000000)'
                     }}>
-                {student.name}
+                {student.name} <br />
+            <button className="delete-btn" onClick={() => deleteStudent(student._id)} type="submit">❌</button>
             </div>
         </>
     )
