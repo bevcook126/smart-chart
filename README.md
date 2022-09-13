@@ -1,11 +1,11 @@
 
 <div align ="center">
 <h1><img src="https://i.imgur.com/trsLEiQ.png" width="308" height="80"></h1>
-<h3>https://github.com/bevcook126/smart-chart</h3>
+<h3>:chair: https://github.com/bevcook126/smart-chart :chair:</h3>
 <h5>Beverly Cook</h5>
-:chair: <a href="https://www.linkedin.com/in/beverly-cook-093625153/" target="_blank">
+<a href="https://www.linkedin.com/in/beverly-cook-093625153/" target="_blank">
       <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white">
-   </a> :chair:
+   </a>
 <a href="mailto:bevcook126@gmail.com" target="_blank">
       <img src="https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white">
    </a>
