@@ -11,4 +11,4 @@ export function getAll() {
 
 export function deleteAStudent(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
-  }
+}

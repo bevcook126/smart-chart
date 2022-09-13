@@ -1,6 +1,3 @@
-// API modules are used to perform the AJAX
-// communications between client (browser)
-// and the server
 import sendRequest from './send-request';
 const BASE_URL = '/api/users';
 
