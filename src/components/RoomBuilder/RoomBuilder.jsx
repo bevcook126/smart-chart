@@ -69,7 +69,7 @@ return  (
     <div className="room">
         {room.map((desk, idx) => (
             <div onClick=
-            {desk == null || desk !== student ? 
+            {desk == null && desk !== student ? 
                 () => handleSubmit(idx) : () => unassocStudent(idx)} 
             key={idx} className="desk" 
             style={{backgroundImage: desk !== null ? `url(${desk.student.img})` : 'none' }}
