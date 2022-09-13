@@ -14,10 +14,13 @@
 
 <div align = center><h2>Description :pencil:</h2></div>
 As a former teacher, I've changed up my seating chart in the following ways:<br/>
-&nbsp;&nbsp;&nbsp;- running around my classroom with sticky notes<br/>
-&nbsp;&nbsp;&nbsp;- drawing a map of the room only to write names, erase, and rewrite them until they are no longer legible<br/>
-&nbsp;&nbsp;&nbsp;- using blocks on the floor as a model to rearrange seats <br/>
+<ul>
+    <li>running around my classroom with sticky notes on the desks</li>
+    <li>drawing a map of the room only to write names, erase, and rewrite them until they are no longer legible</li>
+    <li>using blocks and dolls on the floor as a model to rearrange seats</li>
+</ul>
 These methods worked fine, but when my students would come in and sit at their new spots, I would immediately see something I missed. I would either sit two students next to each other that were more successful separated or fill an entire table with students who don't get along.
+
 <br/>
 SmartChart allows teachers to visualize their classroom and see their students' faces in potential seats before the bell rings. Teachers can add students to the app with a name and an image, then assign these students to a grid layout. Upon seeing the potential seating arrangement, teachers can visualize and catch any less-than-ideal pairings, and separate Jerry Seinfeld and Newman before rolling out the new seating chart.<br/>
 
