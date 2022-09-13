@@ -3,19 +3,8 @@ import * as roomsAPI from "../../utilities/rooms-api";
 import './RoomBuilder.css';
 
 
-export const RoomBuilder = ({student}) => {
-    const [room, setRoom] = useState([
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null,
-        null, null, null, null, null, null, null, null, null, null
-    ])
+export const RoomBuilder = ({student, room, setRoom, isActive, setIsActive}) => {
+
 
 
     async function updateRoom(editData) {
@@ -38,6 +27,7 @@ export const RoomBuilder = ({student}) => {
         const tempRoom = room.map(x=>x)
         tempRoom[deskId] = student;
         setRoom(tempRoom);
+        setIsActive([]);
     }
 
     const unassocStudent = (deskId) => {

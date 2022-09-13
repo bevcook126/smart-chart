@@ -14,7 +14,20 @@ export default function App() {
   const [student, setStudent] = useState(null);
   const [students, setStudents] = useState([]);
   const [selectStudent, setSelectStudent] = useState(null);
+  const [isActive, setIsActive] = useState([]);
   const [selectDesk, setSelectDesk] = useState(null);
+  const [room, setRoom] = useState([
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null
+])
 
 
 
@@ -54,15 +67,22 @@ useEffect(function() {
                 student={selectStudent} 
                 setSelectStudent={setSelectStudent} 
                 desk={selectDesk} 
-                setSelectDesk={setSelectDesk} />
+                setSelectDesk={setSelectDesk} 
+                room={room}
+                setRoom={setRoom}
+                isActive={isActive}
+                setIsActive={setIsActive}/>
             </div>
             <div className="right">
               <NewStudentForm addStudent={addStudent} students={students} user={user}/>
                 <StudentTable 
                   setSelectStudent={setSelectStudent} 
+                  isActive={isActive}
+                  setIsActive={setIsActive}
                   deleteStudent={deleteStudent} 
                   setStudents={setStudents}
                   student={student}
+                  room={room}
                   selectStudent={selectStudent}
                   students={students} />
             </div>
