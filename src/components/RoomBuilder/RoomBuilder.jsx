@@ -13,7 +13,6 @@ export const RoomBuilder = ({student, room, setRoom, setIsActive}) => {
     useEffect(function () {
         async function getRooms() {
             const rooms = await roomsAPI.getAll();
-            console.log('rooms.layout', rooms)
             setRoom(rooms.layout)
         }
         getRooms()
@@ -21,13 +20,10 @@ export const RoomBuilder = ({student, room, setRoom, setIsActive}) => {
 
 
     const handleSubmit = (deskId) => {
-        console.log('test', {student})
         const tempRoom = room.map(x=>x)
         tempRoom[deskId] = student;
         setRoom(tempRoom);
         setIsActive([]);
-        console.log(room);
-        console.log(student);
     }
 
     const unassocStudent = (deskId) => {
