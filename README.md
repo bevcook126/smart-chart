@@ -20,8 +20,7 @@ As a former teacher, I've changed up my seating chart in the following ways:<br/
     <li>using blocks and dolls on the floor as a model to rearrange seats</li>
 </ul>
 These methods worked fine, but when my students would come in and sit at their new spots, I would immediately see something I missed. I would either sit two students next to each other that were more successful separated or fill an entire table with students who don't get along.
-
-<br/><br/>
+<hr/>
 SmartChart allows teachers to visualize their classroom and see their students' faces in potential seats before the bell rings. Teachers can add students to the app with a name and an image, then assign these students to a grid layout. Upon seeing the potential seating arrangement, teachers can visualize and catch any less-than-ideal pairings, and separate Jerry Seinfeld and Newman before rolling out the new seating chart.<br/>
 
 <div align = center><h2>Screenshots</h2><div>
