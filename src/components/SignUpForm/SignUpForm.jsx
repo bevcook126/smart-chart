@@ -26,7 +26,6 @@ export default class SignUpForm extends Component {
       const user = await signUp(formData);
       this.props.setUser(user);
     } catch {
-      // An error occurred, like a dup email address
       this.setState({ error: 'Sign Up Failed - Try Again' });
     }
   };

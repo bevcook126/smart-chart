@@ -1,31 +1,28 @@
 import { useState } from "react";
-import StudentInfo from "../StudentInfo/StudentInfo";
 import "./NewStudentForm.css";
 
-export default function NewStudentForm( {addStudent, students, user} ) {
-    const [newStudent, setNewStudent] = useState({
+export default function NewStudentForm({ addStudent, students, user }) {
+  const [newStudent, setNewStudent] = useState({
+      name: "",
+      img: "",
+  });
+
+  function handleAddStudent(evt) {
+      evt.preventDefault();
+      addStudent(newStudent);
+      setNewStudent({
         name: "",
         img: "",
-        });
-
-        function handleAddStudent(evt) {
-            evt.preventDefault();
-            addStudent(newStudent);
-            setNewStudent({
-              name: "",
-              img: "",
-            });
-          }
-        
-          function handleChange(evt) {
-            setNewStudent({ ...newStudent, [evt.target.name]: evt.target.value });
-          }
+      });
+    }
+  
+    function handleChange(evt) {
+      setNewStudent({ ...newStudent, [evt.target.name]: evt.target.value });
+    }
             
-
   return (
     <>
-    <form onSubmit={handleAddStudent} className="NewStudentForm">
-
+      <form onSubmit={handleAddStudent} className="NewStudentForm">
         <label>Name:</label>
         <input
             name="name"
@@ -43,9 +40,8 @@ export default function NewStudentForm( {addStudent, students, user} ) {
             onChange={handleChange}
         />
         
-          <button type="submit">SAVE STUDENT</button>
-    </form>
+        <button type="submit">SAVE STUDENT</button>
+      </form>
     </>
   );
-
 }

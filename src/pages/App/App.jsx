@@ -29,9 +29,6 @@ export default function App() {
     null, null, null, null, null, null, null, null, null, null
 ])
 
-
-
-
 async function addStudent(student) {
     const newStudents = await studentsAPI.addStudent(student);
     setStudents([...students, newStudents]);
